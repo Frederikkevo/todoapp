@@ -4,15 +4,48 @@ const taskInput = document.getElementById('task-input');
 const quantityInput = document.getElementById('quantity-input');
 const todoList = document.getElementById('todo-list');
 const completedList = document.getElementById('completed-list');
+const startScreen = document.getElementById('start-screen');
+const todoContainer = document.getElementById('todo-container');
+const destinationInput = document.getElementById('destination-input');
+const destinationTitle = document.getElementById('destination-title');
+const warmThemeButton = document.getElementById('warm-theme');
+const coldThemeButton = document.getElementById('cold-theme');
 
 // Load tasks from localStorage
 let todos = JSON.parse(localStorage.getItem('todos')) || [];
 let completedTodos = JSON.parse(localStorage.getItem('completedTodos')) || [];
 
-// Render tasks on page load
-window.onload = function() {
+// Event listeners for theme selection
+warmThemeButton.addEventListener('click', () => selectTheme('warm'));
+coldThemeButton.addEventListener('click', () => selectTheme('cold'));
+
+// Theme selection and navigation to the todo list
+function selectTheme(theme) {
+    const destination = destinationInput.value.trim();
+    if (!destination) {
+        alert("Indtast venligst en destination!");
+        return;
+    }
+    
+    destinationTitle.textContent = `Pakkeliste til ${destination}`;
+    document.body.className = theme === 'warm' ? 'warm-theme' : 'cold-theme';
+    
+    startScreen.style.display = 'none';
+    todoContainer.style.display = 'block';
+    
     renderTasks(todos, todoList);
     renderTasks(completedTodos, completedList, true);
+}
+
+// Render tasks on page load
+window.onload = function() {
+    if (todos.length || completedTodos.length) {
+        // If there are already tasks, jump straight to the todo list
+        startScreen.style.display = 'none';
+        todoContainer.style.display = 'block';
+        renderTasks(todos, todoList);
+        renderTasks(completedTodos, completedList, true);
+    }
 }
 
 // Add a new task
