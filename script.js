@@ -46,7 +46,7 @@ function renderTasks(taskArray, listElement, isCompleted = false) {
         listItem.innerHTML = `${task.description} (x${task.quantity})`;
 
         const completeButton = document.createElement('button');
-        completeButton.textContent = isCompleted ? "Fortryd" : "Færdig";
+        completeButton.textContent = isCompleted ? "Pak om" : "Pakket";
         completeButton.classList.add(isCompleted ? 'undo' : 'complete');
         completeButton.addEventListener('click', () => toggleTaskCompletion(task.id, isCompleted));
 

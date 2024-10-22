@@ -1,23 +1,29 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    font-family: 'Helvetica Neue', sans-serif;
+    background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e');
+    background-size: cover;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
+    color: #333;
 }
 
 .container {
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.9);
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 300px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    width: 320px;
+    max-width: 100%;
+    text-align: center;
 }
 
-h1, h2 {
-    text-align: center;
+h1 {
+    color: #ff6347;
+    font-size: 24px;
+    margin-bottom: 20px;
 }
 
 form {
@@ -26,23 +32,26 @@ form {
 }
 
 input[type="text"], input[type="number"] {
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
+    padding: 12px;
+    margin-bottom: 12px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    background-color: #f9f9f9;
 }
 
 button {
-    padding: 10px;
-    background-color: #28a745;
+    padding: 12px;
+    background-color: #ff6347;
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 8px;
     cursor: pointer;
+    font-size: 16px;
 }
 
 button:hover {
-    background-color: #218838;
+    background-color: #ff4500;
 }
 
 ul {
@@ -51,10 +60,10 @@ ul {
 }
 
 li {
-    background-color: #f8f9fa;
-    margin: 5px 0;
-    padding: 10px;
-    border-radius: 5px;
+    background-color: #f1f1f1;
+    margin: 8px 0;
+    padding: 12px;
+    border-radius: 8px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -62,7 +71,7 @@ li {
 
 li.completed {
     text-decoration: line-through;
-    background-color: #d4edda;
+    background-color: #d1ffd1;
 }
 
 button.complete, button.delete {

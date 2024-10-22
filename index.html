@@ -3,17 +3,17 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ToDo App</title>
+    <title>Min pakkeliste</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <div class="container">
-      <h1>Min ToDo-liste</h1>
+      <h1>Min pakkeliste</h1>
       <form id="todo-form">
         <input
           type="text"
           id="task-input"
-          placeholder="Tilføj en ny opgave"
+          placeholder="Hvad skal pakkes?"
           required
         />
         <input
@@ -22,11 +22,11 @@
           placeholder="Antal (valgfri)"
           min="1"
         />
-        <button type="submit">Tilføj opgave</button>
+        <button type="submit">Tilføj til liste</button>
       </form>
-      <h2>Opgaver</h2>
+      <h2>Skal pakkes</h2>
       <ul id="todo-list"></ul>
-      <h2>Færdige opgaver</h2>
+      <h2>Allerede pakket</h2>
       <ul id="completed-list"></ul>
     </div>
     <script src="script.js"></script>
