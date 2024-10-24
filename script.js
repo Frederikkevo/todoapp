@@ -10,6 +10,7 @@ const destinationInput = document.getElementById('destination-input');
 const destinationTitle = document.getElementById('destination-title');
 const warmThemeButton = document.getElementById('warm-theme');
 const coldThemeButton = document.getElementById('cold-theme');
+const backButton = document.getElementById('back-button');
 
 // Load tasks from localStorage
 let todos = JSON.parse(localStorage.getItem('todos')) || [];
@@ -18,6 +19,9 @@ let completedTodos = JSON.parse(localStorage.getItem('completedTodos')) || [];
 // Event listeners for theme selection
 warmThemeButton.addEventListener('click', () => selectTheme('warm'));
 coldThemeButton.addEventListener('click', () => selectTheme('cold'));
+
+// Back button event listener
+backButton.addEventListener('click', () => goBackToStart());
 
 // Theme selection and navigation to the todo list
 function selectTheme(theme) {
@@ -28,13 +32,21 @@ function selectTheme(theme) {
     }
     
     destinationTitle.textContent = `Pakkeliste til ${destination}`;
-    document.body.className = theme === 'warm' ? 'warm-theme' : 'cold-theme';
+    document.body.className = theme === 'warm' ? 'warm-theme' : 'cold-theme'; // Make sure this updates the className
     
     startScreen.style.display = 'none';
     todoContainer.style.display = 'block';
     
     renderTasks(todos, todoList);
     renderTasks(completedTodos, completedList, true);
+}
+
+// Function to go back to start screen
+function goBackToStart() {
+    startScreen.style.display = 'flex';
+    todoContainer.style.display = 'none';
+    document.body.className = ''; // Reset theme
+    destinationInput.value = '';  // Clear destination input
 }
 
 // Render tasks on page load

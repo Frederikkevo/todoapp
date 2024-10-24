@@ -1,41 +1,66 @@
-/* Startskærm */
+/* Startskærm styling */
 .start-screen {
     display: flex;
-    flex-direction: column;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     height: 100vh;
     background-color: #f4f4f4;
 }
 
+.start-container {
+    background-color: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 300px;
+}
+
+.start-container h1 {
+    color: #ff6347;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.start-container input {
+    padding: 12px;
+    margin-bottom: 20px;
+    width: 100%;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
 .theme-options {
     display: flex;
-    justify-content: center;
-    gap: 20px;
+    justify-content: space-between;
 }
 
 .theme-btn {
-    padding: 10px 20px;
+    padding: 12px;
+    width: 45%;
     font-size: 16px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    background-color: #28a745;
+    background-color: #ff6347;
     color: white;
 }
 
 .theme-btn:hover {
-    background-color: #218838;
+    background-color: #ff4500;
 }
 
-/* Generel styling */
+/* Pakkeliste styling */
 body {
     font-family: 'Helvetica Neue', sans-serif;
     margin: 0;
-    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
 }
 
 .container {
@@ -48,25 +73,6 @@ body {
     text-align: center;
 }
 
-h1, h2 {
-    margin: 10px 0;
-}
-
-/* Varmt ferietema */
-.warm-theme {
-    background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e');
-    background-size: cover;
-    background-position: center;
-}
-
-/* Koldt ferietema */
-.cold-theme {
-    background-image: url('https://images.unsplash.com/photo-1517821099600-33c36b1a69b2');
-    background-size: cover;
-    background-position: center;
-}
-
-/* Stil til pakkelisten */
 form input[type="text"], form input[type="number"] {
     padding: 12px;
     margin-bottom: 12px;
@@ -89,22 +95,35 @@ form button:hover {
     background-color: #ff4500;
 }
 
-ul {
-    list-style-type: none;
-    padding: 0;
+.back-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
 }
 
-li {
-    background-color: #f1f1f1;
-    margin: 8px 0;
-    padding: 12px;
-    border-radius: 8px;
+.back-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Varmt ferietema */
+.warm-theme {
+    background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Koldt ferietema */
+.cold-theme {
+    background-color: #add8e6;
+    height: 100vh;
+    width: 100vw;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-}
-
-li.completed {
-    text-decoration: line-through;
-    background-color: #d1ffd1;
 }

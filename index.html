@@ -9,18 +9,20 @@
   <body>
     <!-- Startskærm -->
     <div id="start-screen" class="start-screen">
-      <h1>Velkommen til Pakkelisten!</h1>
-      <p>Indtast din destination:</p>
-      <input
-        type="text"
-        id="destination-input"
-        placeholder="Fx Bali, Island..."
-        required
-      />
-      <p>Vælg ferietype:</p>
-      <div class="theme-options">
-        <button id="warm-theme" class="theme-btn">Varm destination</button>
-        <button id="cold-theme" class="theme-btn">Kold destination</button>
+      <div class="start-container">
+        <h1>Velkommen til Pakkelisten!</h1>
+        <p>Indtast din destination:</p>
+        <input
+          type="text"
+          id="destination-input"
+          placeholder="Fx Bali, Island..."
+          required
+        />
+        <p>Vælg ferietype:</p>
+        <div class="theme-options">
+          <button id="warm-theme" class="theme-btn">Varm destination</button>
+          <button id="cold-theme" class="theme-btn">Kold destination</button>
+        </div>
       </div>
     </div>
 
@@ -41,6 +43,7 @@
       <ul id="todo-list"></ul>
       <h2>Allerede pakket</h2>
       <ul id="completed-list"></ul>
+      <button id="back-button" class="back-btn">Start forfra</button>
     </div>
     <script src="script.js"></script>
   </body>
