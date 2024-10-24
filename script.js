@@ -32,7 +32,7 @@ function selectTheme(theme) {
     }
     
     destinationTitle.textContent = `Pakkeliste til ${destination}`;
-    document.body.className = theme === 'warm' ? 'warm-theme' : 'cold-theme'; // Make sure this updates the className
+    document.body.className = theme === 'warm' ? 'warm-theme' : 'cold-theme'; 
     
     startScreen.style.display = 'none';
     todoContainer.style.display = 'block';
